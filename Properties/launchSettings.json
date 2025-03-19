@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "BeetleWire_UI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "BeetleWire_UI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

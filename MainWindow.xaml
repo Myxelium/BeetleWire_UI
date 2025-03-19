@@ -1,0 +1,33 @@
+<Window
+    x:Class="BeetleWire_UI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BeetleWire_UI"
+    xmlns:pages="using:BeetleWire_UI.Pages"
+    Title="File Sharing App" 
+    >
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+    <Grid>
+        <NavigationView x:Name="NavView" PaneDisplayMode="Left" SelectionChanged="NavView_SelectionChanged">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Client" Tag="client" Icon="Contact"/>
+                <NavigationViewItem Content="Server" Tag="server" Icon="Globe"/>
+                <NavigationViewItem Content="Connections" Tag="connections" Icon="Link"/>
+            </NavigationView.MenuItems>
+            <Frame Padding="10 10 0 0" x:Name="ContentFrame"/>
+        </NavigationView>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+            <StackPanel x:Name="ServerStatusPanel" Orientation="Horizontal" Visibility="Collapsed">
+                <TextBlock Text="Server Running" Margin="0,0,5,0"/>
+                <Button Content="Stop Server" Click="StopServerButton_Click"/>
+            </StackPanel>
+            <StackPanel x:Name="ClientStatusPanel" Orientation="Horizontal" Visibility="Collapsed" Margin="10,0,0,0">
+                <TextBlock Text="Client Connected" Margin="0,0,5,0"/>
+                <Button Content="Disconnect Client" Click="DisconnectClientButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
